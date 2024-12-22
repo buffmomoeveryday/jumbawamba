@@ -1,4 +1,7 @@
+import { useState } from "react"
+
 export default function Stats({ text }) {
+
 
     let numberOfCharacters = text.length
     let words = text.trim().split(" ")
@@ -21,9 +24,10 @@ export default function Stats({ text }) {
 
 
 function Stat({ number, label }) {
+
     return (
-        <section className="stat">
-            <span className={`stat__number`}>{number}</span>
+        <section className={`stat`} >
+            <span className={`stat__number ${number < 0 ? 'stat__number--limit' : 'test'}`}>{number}</span>
             <h2 className="second-heading">{label}</h2>
         </section>
     )
